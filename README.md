@@ -15,3 +15,5 @@ Android SDK Toolsは24.4.1
 Android SDK Platform-toolsは23.0.1
 
 Android API Levelは17(Android 4.2.2ぐらいかな？)
+
+adt-bundle-windows-x86-20140321とかだったかな
