@@ -1,13 +1,13 @@
 package com.fantasy_strategy;
 
+
 import android.content.Context;
 import android.opengl.GLSurfaceView;
-import android.util.Log;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 
-public class MyGLSurfaceView extends GLSurfaceView
+public  class MyGLSurfaceView extends GLSurfaceView
 implements      GestureDetector.OnGestureListener,
 GestureDetector.OnDoubleTapListener {
 
@@ -20,21 +20,21 @@ GestureDetector.OnDoubleTapListener {
 	private TouchManagement touch;
 	private GestureDetector ges;
 
+	//Context
+	public Context mContext;
+
 
 	public MyGLSurfaceView(Context context) {
 		super(context);
 		setFocusable(true);		//タッチイベントが取得できるようにする
 		ges = new GestureDetector(context,this);
-
 		touch = new TouchManagement();
-
-
+		mContext = context;
 	}
 
 	@Override
 	public void setRenderer(Renderer renderer) {
 		super.setRenderer(renderer);
-		//this.mMyRenderer = (MyRenderer)renderer;
 	}
 
 	@Override
@@ -94,24 +94,33 @@ GestureDetector.OnDoubleTapListener {
 
 	@Override
 	public void onLongPress(MotionEvent paramMotionEvent) {
-	//	Log.d("onLongPress","タッチ");
-
+		//Log.d("onLongPress","タッチ");
 	}
 
+	//フリック
 	@Override
-	public boolean onFling(MotionEvent paramMotionEvent1, MotionEvent paramMotionEvent2, float paramFloat1,
-			float paramFloat2) {
-		Log.d("onFling","タッチ");
+	public boolean onFling(MotionEvent paramMotionEvent1, MotionEvent paramMotionEvent2, float paramFloat1, float paramFloat2) {
+		//Log.d("onFling","タッチ");
 		return false;
 	}
 
+	//スクロール
 	@Override
 	public boolean onScroll(MotionEvent e1, MotionEvent e2, float distanceX, float distanceY) {
 
 		float x = e1.getRawX() - e2.getRawX();		//xの移動距離を求める
 		float y = e1.getRawY() - e2.getRawY();		//yの移動距離を求める
-		touch.scroll(e2, x, y );
+
+		if(GameMain.scroll_screen){
+			//上下のみスクロール
+			ResultMain.setCameraPotision(x, y);
+		}else{
+			//ゲーム画面用のスクロール
+			touch.scroll(e2, x, y );
+		}
+
 		return false;
 	}
+
 
 }

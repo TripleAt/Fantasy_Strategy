@@ -13,7 +13,7 @@ public class TextureManager {
 	//テクスチャを保持する
 	private static Map<Integer, Integer> mTextures = new Hashtable<Integer, Integer>();
 
-	//ロードしたテクスチャを追加する//山田、ここソース見直す。
+	//ロードしたテクスチャを追加する
 	public static final void addTexture(int resId, int texId) {
 		mTextures.put(resId, texId);
 	}

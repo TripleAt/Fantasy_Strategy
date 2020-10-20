@@ -7,12 +7,34 @@
         <activity android:name=".MainActivity"
                   android:label="@string/app_name"
                   android:screenOrientation="portrait">
+  <!--           <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter> -->
+        </activity>
+
+
+        <activity android:name="com.fantasy_strategy.TitleActivity"
+                  android:label="@string/app_name"
+                  android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
+
+        <activity android:name="com.fantasy_strategy.ResultActivity"
+                  android:label="@string/app_name"
+                  android:screenOrientation="portrait">
+        </activity>
+
+
+        <activity android:name="com.fantasy_strategy.Stage_Select_Activity"
+                  android:label="@string/app_name"
+                  android:screenOrientation="portrait">
+        </activity>
+
     </application>
     <uses-sdk android:minSdkVersion="4" />
-</manifest> 
+</manifest>
