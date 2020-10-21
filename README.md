@@ -20,3 +20,8 @@ adt-bundle-windows-x86-20140321とかだったかな
 
 当時参考にした本
 https://book.impress.co.jp/books/3008
+
+
+プレゼン資料が残っていたので貼っておきます。
+
+https://drive.google.com/file/d/1hc4cSC-o0igEQKbOytseELizyAM4fyr_/view?usp=sharing
